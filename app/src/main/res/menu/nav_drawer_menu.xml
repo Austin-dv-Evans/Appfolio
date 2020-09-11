@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/miItem0"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/miItem1"
+        android:title="Portfolio"
+        android:icon="@drawable/folder"/>
+    <item
+        android:id="@+id/miItem2"
+        android:title="Certificates"
+        android:icon="@drawable/certificates"/>
+    <item
+        android:id="@+id/miItem3"
+        android:title="Resume"
+        android:icon="@drawable/resume"/>
+    <item
+        android:id="@+id/miItem4"
+        android:title="Contact"
+        android:icon="@drawable/contact1"/>
+
+</menu>
