@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import kotlinx.android.synthetic.main.activity_certificates.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.drawerLayout
+import kotlinx.android.synthetic.main.activity_main.nav_view
 
 class Certificates : AppCompatActivity() {
 
@@ -15,6 +18,12 @@ class Certificates : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_certificates)
+
+        var imgs :List<Int> = listOf<Int>(R.drawable.flatiron, R.drawable.android_ph, R.drawable.css_ph, R.drawable.dart_ph,
+            R.drawable.html_ph, R.drawable.javascript_ph, R.drawable.javascript_advanced_ph, R.drawable.kotlin_ph,
+            R.drawable.node_certificate, R.drawable.react_ph, R.drawable.ruby_ph, R.drawable.mimo_code, R.drawable.mimo_android)
+        var adapter = Adapter(imgs, this)
+        pager.adapter = adapter
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
