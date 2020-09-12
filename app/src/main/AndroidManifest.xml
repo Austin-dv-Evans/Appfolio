@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PDFviewActivity"></activity>
+        <activity android:name=".FancyResume"></activity>
         <activity android:name=".Contact" />
         <activity android:name=".Resume" />
         <activity android:name=".Certificates" />

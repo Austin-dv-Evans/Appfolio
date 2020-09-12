@@ -12,6 +12,7 @@ public class Adapter(var list:List<Int>, var ctx: Context) : PagerAdapter() {
     lateinit var layoutInflater: LayoutInflater
 
 
+
     override fun getCount(): Int {
         return list.size
     }

@@ -3,12 +3,9 @@ package com.resume.adve
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.FileUtils
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.resume.adve.utils.FileUtils.getPdfNameFromAssets
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.drawerLayout
 import kotlinx.android.synthetic.main.activity_main.nav_view
 import kotlinx.android.synthetic.main.activity_p_d_fview.*
@@ -22,9 +19,10 @@ class Resume : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resume)
 
-
+        setUpOnClickListenerFancy()
         setUpOnClickListener()
-        checkPdfAction(intent)
+        
+//        checkPdfAction(intent)
 
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
@@ -77,24 +75,31 @@ class Resume : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    fun getPdfNameFromAssets(): String {
-        return "AustinEvansSoftwareEngineer.pdf"
-    }
-
-    fun showPdfFromAssets(pdfName: String){
-        pdfView.fromAsset(pdfName)
-            .password(null)
-            .defaultPage(0)
-            .onPageError { page, _ ->
-                Toast.makeText(this, "Error at page: $page", Toast.LENGTH_LONG).show()
-            }
-            .load()
-    }
-    private fun checkPdfAction(intent: Intent) {
-        when (intent.getStringExtra("ViewType")) {
-            "assets" -> {
-                showPdfFromAssets(getPdfNameFromAssets())
-            }
+    private fun setUpOnClickListenerFancy() {
+        button_resume_asset_fancy.setOnClickListener {
+            val intent = Intent(this, FancyResume::class.java)
+            intent.putExtra("ViewType", "assets")
+            startActivity(intent)
         }
     }
+//    fun getPdfNameFromAssets(): Int {
+//        return R.drawable.austin_evans_software_engineer
+//    }
+//
+//    fun showPdfFromAssets(pdfName: Int){
+//        pdfView.fromAsset(pdfName.toString())
+//            .password(null)
+//            .defaultPage(0)
+//            .onPageError { page, _ ->
+//                Toast.makeText(this, "Error at page: $page", Toast.LENGTH_LONG).show()
+//            }
+//            .load()
+//    }
+//    private fun checkPdfAction(intent: Intent) {
+//        when (intent.getStringExtra("ViewType")) {
+//            "assets" -> {
+//                showPdfFromAssets(getPdfNameFromAssets())
+//            }
+//        }
+//    }
 }

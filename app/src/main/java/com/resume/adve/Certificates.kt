@@ -20,8 +20,8 @@ class Certificates : AppCompatActivity() {
         setContentView(R.layout.activity_certificates)
 
         var imgs :List<Int> = listOf<Int>(R.drawable.flatiron, R.drawable.android_ph, R.drawable.css_ph, R.drawable.dart_ph,
-            R.drawable.html_ph, R.drawable.javascript_ph, R.drawable.javascript_advanced_ph, R.drawable.kotlin_ph,
-            R.drawable.node_certificate, R.drawable.react_ph, R.drawable.ruby_ph, R.drawable.mimo_code, R.drawable.mimo_android)
+            R.drawable.javascript_ph, R.drawable.javascript_advanced_ph, R.drawable.kotlin_ph,
+            R.drawable.react_ph, R.drawable.html_ph, R.drawable.node_certificate, R.drawable.ruby_ph, R.drawable.mimo_code, R.drawable.mimo_android)
         var adapter = Adapter(imgs, this)
         pager.adapter = adapter
 
